@@ -1,0 +1,1567 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CyberShield | Cybersecurity Toolkit</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #07111f;
+            color: #e8f1ff;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            padding: 22px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            border-bottom: 1px solid #1d314a;
+
+            background: #091522;
+        }
+
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+
+        .shield {
+            width: 45px;
+            height: 45px;
+
+            border-radius: 12px;
+
+            background: #00c6ff;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        /* CSS Shield */
+
+       .header-shield {
+    width: 24px;
+    height: 29px;
+    background: #07111f;
+    clip-path: polygon(
+        50% 0%,
+        92% 15%,
+        88% 65%,
+        50% 100%,
+        12% 65%,
+        8% 15%
+    );
+    position: relative;
+}
+
+.header-shield::before {
+    content: "";
+    position: absolute;
+    inset: 3px;
+    background: #00c6ff;
+    clip-path: polygon(
+        50% 0%,
+        92% 15%,
+        88% 65%,
+        50% 100%,
+        12% 65%,
+        8% 15%
+    );
+}
+
+
+        .logo h1 {
+            font-size: 25px;
+            letter-spacing: 1px;
+        }
+
+
+        .logo span {
+            color: #00c6ff;
+        }
+
+
+        .status {
+            color: #52e39b;
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           HERO SECTION
+        ========================= */
+
+        .hero {
+            text-align: center;
+
+            padding: 55px 20px 35px;
+        }
+
+
+        .hero h2 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+
+        .hero h2 span {
+            color: #00c6ff;
+        }
+
+
+        .hero p {
+            color: #9db0c8;
+
+            font-size: 17px;
+
+            max-width: 700px;
+
+            margin: auto;
+
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           MAIN CONTAINER
+        ========================= */
+
+        .container {
+            width: 86%;
+            max-width: 1200px;
+
+            margin: auto;
+
+            padding-bottom: 60px;
+        }
+
+
+        .section-title {
+            margin: 30px 0 18px;
+
+            font-size: 22px;
+        }
+
+
+        /* =========================
+           CARDS
+        ========================= */
+
+        .cards {
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 22px;
+        }
+
+
+        .card {
+            background: #0d1b2a;
+
+            border: 1px solid #1d344d;
+
+            border-radius: 18px;
+
+            padding: 25px;
+
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.25);
+
+            transition: 0.2s;
+        }
+
+
+        .card:hover {
+            border-color: #00c6ff;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================
+           PROFESSIONAL CSS ICONS
+        ========================= */
+
+        .icon {
+            width: 48px;
+            height: 48px;
+
+            margin-bottom: 15px;
+
+            border: 1px solid #00c6ff;
+
+            border-radius: 12px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            color: #00c6ff;
+
+            background: rgba(0, 198, 255, 0.08);
+
+            position: relative;
+        }
+
+
+        /* Lock Icon */
+
+        .icon.lock::before {
+            content: "";
+
+            width: 17px;
+            height: 14px;
+
+            border: 2px solid #00c6ff;
+
+            border-radius: 3px;
+
+            position: absolute;
+
+            bottom: 9px;
+        }
+
+
+        .icon.lock::after {
+            content: "";
+
+            width: 10px;
+            height: 11px;
+
+            border: 2px solid #00c6ff;
+
+            border-bottom: none;
+
+            border-radius: 8px 8px 0 0;
+
+            position: absolute;
+
+            top: 9px;
+        }
+
+
+        /* Hash Icon */
+
+        .icon.search::before {
+            content: "#";
+
+            font-size: 27px;
+
+            font-weight: bold;
+
+            color: #00c6ff;
+        }
+
+
+        /* Encryption Icon */
+
+        .icon.encrypt::before {
+            content: "";
+
+            width: 18px;
+            height: 15px;
+
+            border: 2px solid #00c6ff;
+
+            border-radius: 3px;
+
+            position: absolute;
+
+            bottom: 9px;
+        }
+
+
+        .icon.encrypt::after {
+            content: "";
+
+            width: 10px;
+            height: 11px;
+
+            border: 2px solid #00c6ff;
+
+            border-bottom: none;
+
+            border-radius: 8px 8px 0 0;
+
+            position: absolute;
+
+            top: 9px;
+        }
+
+
+        /* Decryption Icon */
+
+        .icon.decrypt::before {
+            content: "";
+
+            width: 18px;
+            height: 15px;
+
+            border: 2px solid #00c6ff;
+
+            border-radius: 3px;
+
+            position: absolute;
+
+            bottom: 9px;
+        }
+
+
+        .icon.decrypt::after {
+            content: "";
+
+            width: 10px;
+            height: 11px;
+
+            border: 2px solid #00c6ff;
+
+            border-bottom: none;
+
+            border-radius: 8px 8px 0 0;
+
+            position: absolute;
+
+            top: 9px;
+
+            transform: translateX(-4px);
+        }
+
+
+        /* =========================
+           CARD TEXT
+        ========================= */
+
+        .card h3 {
+            font-size: 21px;
+
+            margin-bottom: 8px;
+        }
+
+
+        .card-description {
+            color: #91a5bd;
+
+            font-size: 14px;
+
+            line-height: 1.5;
+
+            margin-bottom: 20px;
+        }
+
+
+        /* =========================
+           INPUTS
+        ========================= */
+
+        input[type="password"],
+        input[type="text"] {
+
+            width: 100%;
+
+            padding: 13px;
+
+            border-radius: 10px;
+
+            border: 1px solid #29445e;
+
+            background: #07111f;
+
+            color: white;
+
+            outline: none;
+
+            margin-bottom: 12px;
+        }
+
+
+        input[type="password"]:focus,
+        input[type="text"]:focus {
+
+            border-color: #00c6ff;
+        }
+
+
+        input[type="file"] {
+
+            width: 100%;
+
+            padding: 12px;
+
+            background: #07111f;
+
+            border: 1px dashed #34516d;
+
+            border-radius: 10px;
+
+            color: #aebed0;
+
+            margin-bottom: 12px;
+        }
+
+
+        /* =========================
+           BUTTONS
+        ========================= */
+
+        button {
+
+            width: 100%;
+
+            padding: 13px;
+
+            border: none;
+
+            border-radius: 10px;
+
+            background: #00c6ff;
+
+            color: #06101c;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            font-size: 15px;
+
+            margin-top: 5px;
+
+            transition: 0.2s;
+        }
+
+
+        button:hover {
+
+            background: #37d2ff;
+
+            transform: translateY(-1px);
+        }
+
+
+        /* =========================
+           RESULTS
+        ========================= */
+
+        .result {
+
+            margin-top: 15px;
+
+            padding: 14px;
+
+            border-radius: 10px;
+
+            background: #07111f;
+
+            border: 1px solid #20384f;
+
+            color: #b8c9dc;
+
+            font-size: 14px;
+
+            line-height: 1.6;
+
+            word-break: break-word;
+        }
+
+
+        .success {
+            color: #52e39b;
+        }
+
+
+        .warning {
+            color: #ffcf5c;
+        }
+
+
+        .error {
+            color: #ff6b81;
+        }
+
+
+        .hash {
+
+            font-family: monospace;
+
+            font-size: 12px;
+
+            color: #6ddcff;
+        }
+
+
+        /* =========================
+           PASSWORD STRENGTH BAR
+        ========================= */
+
+        .strength-bar {
+
+            height: 8px;
+
+            background: #17283a;
+
+            border-radius: 10px;
+
+            margin-top: 12px;
+
+            overflow: hidden;
+        }
+
+
+        .strength-fill {
+
+            height: 100%;
+
+            width: 0%;
+
+            background: #52e39b;
+
+            transition: 0.3s;
+        }
+
+
+        /* =========================
+           ABOUT CYBERSHIELD
+        ========================= */
+
+        .about-section {
+
+            margin-top: 45px;
+
+            padding: 30px;
+
+            border-radius: 18px;
+
+            background: #0d1b2a;
+
+            border: 1px solid #1d344d;
+        }
+
+
+        .about-content {
+
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 22px;
+        }
+
+
+        .about-icon {
+
+            min-width: 58px;
+
+            height: 58px;
+
+            border-radius: 14px;
+
+            background: rgba(0, 198, 255, 0.08);
+
+            border: 1px solid #00c6ff;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+        }
+
+
+        /* About Shield */
+
+        .shield-icon {
+
+            width: 25px;
+
+            height: 30px;
+
+            border: 2px solid #00c6ff;
+
+            clip-path: polygon(
+                50% 0%,
+                92% 15%,
+                88% 65%,
+                50% 100%,
+                12% 65%,
+                8% 15%
+            );
+        }
+
+
+        .about-section h2 {
+
+            margin-bottom: 10px;
+
+            font-size: 24px;
+        }
+
+
+        .about-section p {
+
+            color: #91a5bd;
+
+            line-height: 1.7;
+
+            font-size: 14px;
+        }
+
+
+        .security-points {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 10px;
+
+            margin-top: 18px;
+        }
+
+
+        .security-points span {
+
+            padding: 8px 12px;
+
+            border-radius: 20px;
+
+            background: #07111f;
+
+            border: 1px solid #29445e;
+
+            color: #b9d8ee;
+
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            text-align: center;
+
+            border-top: 1px solid #1d314a;
+
+            padding: 22px;
+
+            color: #71859c;
+
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           RESPONSIVE DESIGN
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            .cards {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .hero h2 {
+
+                font-size: 32px;
+            }
+
+
+            header {
+
+                padding: 18px 5%;
+            }
+
+
+            .container {
+
+                width: 92%;
+            }
+
+
+            .about-content {
+
+                flex-direction: column;
+            }
+
+
+            .about-icon {
+
+                min-width: 58px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+    <header>
+
+        <div class="logo">
+
+            <div class="shield">
+
+                <span class="header-shield"></span>
+
+            </div>
+
+
+            <div>
+
+                <h1>
+                    Cyber<span>Shield</span>
+                </h1>
+
+            </div>
+
+        </div>
+
+
+        <div class="status">
+            ● System Secure
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="hero">
+
+        <h2>
+            Cybersecurity <span>Toolkit</span>
+        </h2>
+
+
+        <p>
+            Protect files, analyze password strength and verify file
+            integrity using practical cryptographic security techniques.
+        </p>
+
+    </section>
+
+
+
+    <!-- =========================
+         MAIN
+    ========================= -->
+
+    <main class="container">
+
+
+        <div class="section-title">
+            Security Tools
+        </div>
+
+
+        <div class="cards">
+
+
+            <!-- =========================
+                 PASSWORD ANALYZER
+            ========================= -->
+
+            <div class="card">
+
+                <div class="icon lock"></div>
+
+
+                <h3>
+                    Password Security Analyzer
+                </h3>
+
+
+                <p class="card-description">
+
+                    Check password strength using length, uppercase,
+                    lowercase, numbers and special characters.
+
+                </p>
+
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter a password"
+                >
+
+
+                <button onclick="analyzePassword()">
+
+                    Analyze Password
+
+                </button>
+
+
+                <div
+                    id="passwordResult"
+                    class="result"
+                >
+
+                    Result will appear here.
+
+                </div>
+
+
+                <div class="strength-bar">
+
+                    <div
+                        id="strengthFill"
+                        class="strength-fill"
+                    ></div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =========================
+                 SHA-512
+            ========================= -->
+
+            <div class="card">
+
+                <div class="icon search"></div>
+
+
+                <h3>
+                    SHA-512 Integrity Checker
+                </h3>
+
+
+                <p class="card-description">
+
+                    Generate a SHA-512 hash to verify whether a file
+                    has been modified or remains unchanged.
+
+                </p>
+
+
+                <input
+                    type="file"
+                    id="hashFile"
+                >
+
+
+                <button onclick="checkIntegrity()">
+
+                    Generate SHA-512 Hash
+
+                </button>
+
+
+                <div
+                    id="hashResult"
+                    class="result"
+                >
+
+                    Select a file to generate its hash.
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =========================
+                 ENCRYPTION
+            ========================= -->
+
+            <div class="card">
+
+                <div class="icon encrypt"></div>
+
+
+                <h3>
+                    Secure File Encryption
+                </h3>
+
+
+                <p class="card-description">
+
+                    Protect a file using password-based authenticated
+                    symmetric encryption.
+
+                </p>
+
+
+                <input
+                    type="file"
+                    id="encryptFile"
+                >
+
+
+                <input
+                    type="password"
+                    id="encryptPassword"
+                    placeholder="Enter encryption password"
+                >
+
+
+                <button onclick="encryptFile()">
+
+                    Encrypt & Download
+
+                </button>
+
+
+                <div
+                    id="encryptResult"
+                    class="result"
+                >
+
+                    Your encrypted file will be downloaded.
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =========================
+                 DECRYPTION
+            ========================= -->
+
+            <div class="card">
+
+                <div class="icon decrypt"></div>
+
+
+                <h3>
+                    Secure File Decryption
+                </h3>
+
+
+                <p class="card-description">
+
+                    Restore an encrypted file using the correct
+                    password.
+
+                </p>
+
+
+                <input
+                    type="file"
+                    id="decryptFile"
+                >
+
+
+                <input
+                    type="password"
+                    id="decryptPassword"
+                    placeholder="Enter decryption password"
+                >
+
+
+                <button onclick="decryptFile()">
+
+                    Decrypt & Download
+
+                </button>
+
+
+                <div
+                    id="decryptResult"
+                    class="result"
+                >
+
+                    Select an encrypted file to decrypt it.
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =========================
+             ABOUT CYBERSHIELD
+        ========================= -->
+
+        <section class="about-section">
+
+
+            <div class="about-content">
+
+
+                <div class="about-icon">
+
+                    <span class="shield-icon"></span>
+
+                </div>
+
+
+                <div>
+
+
+                    <h2>
+                        About CyberShield
+                    </h2>
+
+
+                    <p>
+
+                        CyberShield is a practical cybersecurity toolkit
+                        designed to demonstrate important cryptographic
+                        security concepts. It provides password strength
+                        analysis, secure file encryption and decryption,
+                        and SHA-512 based file integrity verification
+                        through a simple web interface.
+
+                    </p>
+
+
+                    <div class="security-points">
+
+                        <span>Password Security</span>
+
+                        <span>File Protection</span>
+
+                        <span>SHA-512 Integrity</span>
+
+                        <span>Cryptographic Security</span>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        CyberShield © 2026 |
+        Cryptography & Cyber Security Activity
+
+    </footer>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
+    <script>
+
+
+        /* =========================
+           PASSWORD ANALYZER
+        ========================= */
+
+        async function analyzePassword() {
+
+
+            const password =
+                document.getElementById("password").value;
+
+
+            const resultBox =
+                document.getElementById("passwordResult");
+
+
+            const strengthFill =
+                document.getElementById("strengthFill");
+
+
+            if (!password) {
+
+
+                resultBox.innerHTML =
+                    '<span class="error">' +
+                    'Please enter a password.' +
+                    '</span>';
+
+
+                strengthFill.style.width = "0%";
+
+
+                return;
+
+            }
+
+
+            const response = await fetch(
+                "/analyze-password",
+                {
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+
+                    body: JSON.stringify({
+                        password: password
+                    })
+                }
+            );
+
+
+            const data =
+                await response.json();
+
+
+            resultBox.innerHTML =
+                "<b>Strength:</b> " +
+                data.strength +
+                "<br>" +
+                "<b>Score:</b> " +
+                data.score +
+                "/5";
+
+
+            if (data.feedback.length > 0) {
+
+
+                resultBox.innerHTML +=
+                    "<br><br>" +
+                    "<b>Suggestions:</b><br>" +
+                    data.feedback.join("<br>");
+
+
+            } else {
+
+
+                resultBox.innerHTML +=
+                    '<br><span class="success">' +
+                    'Strong password!' +
+                    '</span>';
+
+            }
+
+
+            strengthFill.style.width =
+                (data.score / 5 * 100) + "%";
+
+        }
+
+
+
+        /* =========================
+           SHA-512 HASH
+        ========================= */
+
+        async function checkIntegrity() {
+
+
+            const fileInput =
+                document.getElementById("hashFile");
+
+
+            const resultBox =
+                document.getElementById("hashResult");
+
+
+            if (!fileInput.files.length) {
+
+
+                resultBox.innerHTML =
+                    '<span class="error">' +
+                    'Please select a file.' +
+                    '</span>';
+
+
+                return;
+
+            }
+
+
+            const formData =
+                new FormData();
+
+
+            formData.append(
+                "file",
+                fileInput.files[0]
+            );
+
+
+            resultBox.innerHTML =
+                "Generating SHA-512 hash...";
+
+
+            const response = await fetch(
+                "/hash-file",
+                {
+                    method: "POST",
+
+                    body: formData
+                }
+            );
+
+
+            const data =
+                await response.json();
+
+
+            if (data.error) {
+
+
+                resultBox.innerHTML =
+                    '<span class="error">' +
+                    data.error +
+                    '</span>';
+
+
+                return;
+
+            }
+
+
+            resultBox.innerHTML =
+                "<b>File:</b> " +
+                data.filename +
+                "<br><br>" +
+                "<b>SHA-512:</b><br>" +
+                '<span class="hash">' +
+                data.sha512 +
+                "</span>";
+
+        }
+
+
+
+        /* =========================
+           FILE ENCRYPTION
+        ========================= */
+
+        async function encryptFile() {
+
+
+            const fileInput =
+                document.getElementById("encryptFile");
+
+
+            const password =
+                document.getElementById(
+                    "encryptPassword"
+                ).value;
+
+
+            const resultBox =
+                document.getElementById(
+                    "encryptResult"
+                );
+
+
+            if (!fileInput.files.length) {
+
+
+                resultBox.innerHTML =
+                    '<span class="error">' +
+                    'Please select a file.' +
+                    '</span>';
+
+
+                return;
+
+            }
+
+
+            if (!password) {
+
+
+                resultBox.innerHTML =
+                    '<span class="error">' +
+                    'Please enter a password.' +
+                    '</span>';
+
+
+                return;
+
+            }
+
+
+            const formData =
+                new FormData();
+
+
+            formData.append(
+                "file",
+                fileInput.files[0]
+            );
+
+
+            formData.append(
+                "password",
+                password
+            );
+
+
+            resultBox.innerHTML =
+                "Encrypting file...";
+
+
+            const response = await fetch(
+                "/encrypt",
+                {
+                    method: "POST",
+
+                    body: formData
+                }
+            );
+
+
+            if (!response.ok) {
+
+
+                const data =
+                    await response.json();
+
+
+                resultBox.innerHTML =
+                    '<span class="error">' +
+                    data.error +
+                    '</span>';
+
+
+                return;
+
+            }
+
+
+            const blob =
+                await response.blob();
+
+
+            const url =
+                window.URL.createObjectURL(blob);
+
+
+            const a =
+                document.createElement("a");
+
+
+            a.href = url;
+
+
+            a.download =
+                fileInput.files[0].name +
+                ".encrypted";
+
+
+            a.click();
+
+
+            window.URL.revokeObjectURL(url);
+
+
+            resultBox.innerHTML =
+                '<span class="success">' +
+                'File encrypted successfully!' +
+                '</span><br>' +
+                'Encrypted file downloaded.';
+
+        }
+
+
+
+        /* =========================
+           FILE DECRYPTION
+        ========================= */
+
+        async function decryptFile() {
+
+
+            const fileInput =
+                document.getElementById(
+                    "decryptFile"
+                );
+
+
+            const password =
+                document.getElementById(
+                    "decryptPassword"
+                ).value;
+
+
+            const resultBox =
+                document.getElementById(
+                    "decryptResult"
+                );
+
+
+            if (!fileInput.files.length) {
+
+
+                resultBox.innerHTML =
+                    '<span class="error">' +
+                    'Please select an encrypted file.' +
+                    '</span>';
+
+
+                return;
+
+            }
+
+
+            if (!password) {
+
+
+                resultBox.innerHTML =
+                    '<span class="error">' +
+                    'Please enter the password.' +
+                    '</span>';
+
+
+                return;
+
+            }
+
+
+            const formData =
+                new FormData();
+
+
+            formData.append(
+                "file",
+                fileInput.files[0]
+            );
+
+
+            formData.append(
+                "password",
+                password
+            );
+
+
+            resultBox.innerHTML =
+                "Decrypting file...";
+
+
+            const response = await fetch(
+                "/decrypt",
+                {
+                    method: "POST",
+
+                    body: formData
+                }
+            );
+
+
+            if (!response.ok) {
+
+
+                const data =
+                    await response.json();
+
+
+                resultBox.innerHTML =
+                    '<span class="error">' +
+                    data.error +
+                    '</span>';
+
+
+                return;
+
+            }
+
+
+            const blob =
+                await response.blob();
+
+
+            const url =
+                window.URL.createObjectURL(blob);
+
+
+            const a =
+                document.createElement("a");
+
+
+            a.href = url;
+
+
+            let filename =
+                fileInput.files[0].name;
+
+
+            if (filename.endsWith(".encrypted")) {
+
+
+                filename =
+                    filename.substring(
+                        0,
+                        filename.length - 10
+                    );
+
+            }
+
+
+            a.download = filename;
+
+
+            a.click();
+
+
+            window.URL.revokeObjectURL(url);
+
+
+            resultBox.innerHTML =
+                '<span class="success">' +
+                'File decrypted successfully!' +
+                '</span><br>' +
+                'Original file downloaded.';
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
